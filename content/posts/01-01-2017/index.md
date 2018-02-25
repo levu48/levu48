@@ -1,7 +1,7 @@
 ---
-title: "Bold Mage"
-cover: "https://unsplash.it/400/300/?random?BoldMage"
-date: "01/01/2017"
+title: "Làng thế vận hội mùa Đông Pyeongchang"
+cover: "https://i0.wp.com/www.snowsbest.com/wp-content/uploads/2017/11/Alpensia-Ski-Resort.jpg"
+date: "02/24/2017"
 category: "tech"
 tags:
     - programming
