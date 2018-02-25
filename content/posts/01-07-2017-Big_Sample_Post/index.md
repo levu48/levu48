@@ -5,8 +5,9 @@ category: "moar"
 date: "02/25/2018"
 slug: "Big-Sample_Test"
 tags:
-    - test
-    - huge
+    - tết 2018
+    - văn hoá
+    - trung hoa
 ---
 
 # NOTE: This "post" is based on [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and is meant to test styling of Markdown generated documents.

@@ -4,9 +4,9 @@ cover: "http://www.technetbd.com/how-to/wp-content/uploads/2017/01/trump_see_wor
 date: "01/02/2017"
 category: "another one"
 tags:
-    - test
-    - something
-    - tagging
+    - tổng thống trump
+    - chính trị
+    - hoa kỳ
 ---
 # Autolyci eminus retenta
 

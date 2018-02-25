@@ -4,9 +4,9 @@ cover: "https://i0.wp.com/www.snowsbest.com/wp-content/uploads/2017/11/Alpensia-
 date: "02/24/2017"
 category: "tech"
 tags:
-    - programming
-    - stuff
-    - other
+    - thế vận hội
+    - thể thao
+    - hàn quốc
 ---
 # Quanto et ius coniunctis urbes
 
