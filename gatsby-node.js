@@ -38,6 +38,8 @@ function addSiblingNodes(createNodeField) {
   }
 }
 
+const createSlug = (str) => str.split(' ').join('-');
+
 exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   const { createNodeField } = boundActionCreators;
   let slug;
@@ -48,7 +50,9 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, "title")
     ) {
-      slug = `/${_.kebabCase(node.frontmatter.title)}`;
+      //slug = `/${_.kebabCase(node.frontmatter.title)}`;
+      slug = createSlug(`/${_.deburr(node.frontmatter.title)}`);
+
     } else if (parsedFilePath.name !== "index" && parsedFilePath.dir !== "") {
       slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`;
     } else if (parsedFilePath.dir === "") {
@@ -60,7 +64,8 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, "slug")
     ) {
-      slug = `/${_.kebabCase(node.frontmatter.slug)}`;
+      //slug = `/${_.kebabCase(node.frontmatter.slug)}`;
+      slug = createSlug(`/${_.deburr(node.frontmatter.slug)}`);
     }
     createNodeField({ node, name: "slug", value: slug });
     postNodes.push(node);
@@ -133,7 +138,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         const tagList = Array.from(tagSet);
         tagList.forEach(tag => {
           createPage({
-            path: `/tags/${_.kebabCase(tag)}/`,
+            path: createSlug(`/tags/${_.deburr(tag)}/`),          //`/tags/${_.kebabCase(tag)}/`,
             component: tagPage,
             context: {
               tag
@@ -144,7 +149,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         const categoryList = Array.from(categorySet);
         categoryList.forEach(category => {
           createPage({
-            path: `/categories/${_.kebabCase(category)}/`,
+            path: createSlug(`/tags/${_.deburr(category)}/`),          //`/categories/${_.kebabCase(category)}/`,
             component: categoryPage,
             context: {
               category
